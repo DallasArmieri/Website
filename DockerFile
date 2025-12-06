@@ -1,0 +1,14 @@
+# Use Node 20
+FROM node:20
+
+# Set working directory inside the container
+WORKDIR /workspace
+
+# Install Eleventy globally
+RUN npm install -g @11ty/eleventy
+
+# Copy your project files (optional)
+COPY . .
+
+# Keep container alive
+CMD ["sleep", "infinity"]
