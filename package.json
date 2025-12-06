@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "eleventy",
-    "deploy": "npx eleventy && git add _site && git commit -m 'Deploy Eleventy site' && git subtree push --prefix _site origin gh-pages"
+    "deploy": "npx eleventy && git add -f _site && git commit -m 'Deploy Eleventy site' && git subtree push --prefix _site origin gh-pages"
   },
   "keywords": [],
   "author": "",
