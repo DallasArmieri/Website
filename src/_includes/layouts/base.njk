@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>{{ title }}</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
 </head>
 
 <body>
@@ -17,8 +17,6 @@
       <a href="/projects/">Projects</a>
       <ul class="dropdown-menu">
         <li><a href="/projects/NM231_Graphic_Novel/">Graphic Novel</a></li>
-        <li><a href="/projects/project2/">Project 2</a></li>
-        <li><a href="/projects/project3/">Project 3</a></li>
       </ul>
     </li>
     <li class="nav-item">

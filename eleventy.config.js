@@ -8,4 +8,5 @@ module.exports = function(eleventyConfig) {
       output: "_site"
     }
   };
+   pathPrefix: "/Website/"
 };
