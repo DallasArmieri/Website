@@ -1,13 +1,40 @@
----
-title: page2
-layout: layouts/base.njk
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>page2</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
 
+<body>
+ <header>
+  <nav>
+  <ul class="nav">
+    <li class="nav-item">
+      <a href="/">Home</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a href="/projects/">Projects</a>
+      <ul class="dropdown-menu">
+        <li><a href="/projects/NM231_Graphic_Novel/">Graphic Novel</a></li>
+      </ul>
+    </li>
+    <li class="nav-item">
+      <a href="/about/">About</a>
+    </li>
+  </ul>
+</nav>
+  </nav>
+</header>
+
+
+  <main>
+    
 <!DOCTYPE html>
 <html>
     <head>
         <title>Dallas Armieri Graphic Novel</title>
-        <link href="css/page2.CSS" rel="stylesheet"type="text/css">
+        <link href="css/page2.css" rel="stylesheet"type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Germania+One" rel="stylesheet">
     </head>
     <body>
@@ -24,8 +51,8 @@ layout: layouts/base.njk
                  <div id="panel-2-sub2"  class="row"></div>
                 </div>
             <div id="panel-3"  class="flex-sub">
-Depending on egg type, varying conditions will be required for it to hatch. Without proper attendance your egg will stay in an inactive state and never hatch. 
-</div>
+                Depending on egg type, varying conditions will be required for it to hatch. Without proper attendance your egg will stay in an inactive state and never hatch. 
+            </div>
             <div id="panel-4"  class="flex-sub">
                     <div id="panel-4-sub1"  class="row">Red eggs require the application off heat. </div>
                     <div id="panel-4-sub2"  class="row"> Blue eggs must be chilled.</div>
@@ -47,4 +74,7 @@ Depending on egg type, varying conditions will be required for it to hatch. With
             </div> <!-- end box_content-->
         </div> <!-- end box_model-->
     </body>
+</html>
+  </main>
+</body>
 </html>
