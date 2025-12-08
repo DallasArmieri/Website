@@ -1,0 +1,77 @@
+body{
+    background-image: linear-gradient(to bottom right,black,#383838);
+    font-family:Old Standard TT;
+    color: aqua;
+}
+
+p{
+    padding-top: 0px;
+    font-family:Old Standard TT;
+    color: #e4ea3a;  
+    margin: 10px 10px 10px 10px;
+}
+#blackMiddle{
+    background-image: linear-gradient(to right,black,#2b2b2b);
+    font-family:Old Standard TT;
+    color: black;
+    width: 550px;
+    height: 1500px;
+    margin: auto;
+    padding: 50px"
+}
+#yellowMiddle{
+    background-image: linear-gradient(to right,#e4ea3a,#fff79e);
+    font-family:Old Standard TT;
+    color: black;
+    width: 550px;
+    height: 1500px;
+    margin: auto;
+    padding: 50px;
+}
+#greenMiddle{
+    background-image: linear-gradient(to right,#005402,#31b736);
+    font-family:Old Standard TT;
+    color: black;
+    width: 550px;
+    height: 1500px;
+    margin: auto;
+    padding: 50px;
+}
+#blueMiddle{
+    background-image: linear-gradient(to right,#377fb7,#39d3cb);
+    font-family:Old Standard TT;
+     color: black;
+    width: 550px;
+    height: 1500px;
+    margin: auto;
+    padding: 50px;
+}
+#redMiddle{
+    background-image: linear-gradient(to right,#4c0000,#ba0000);
+    font-family:Old Standard TT;
+    color: black;
+    width: 550px;
+    height: 1500px;
+    margin: auto;
+    padding: 50px;
+}
+div{
+    font-family:Old Standard TT; 
+    background-color: white;  
+}
+
+h1{
+    font-family:Old Standard TT; 
+    font-size: 20px;
+}
+h3{
+ font-size: 20px;   
+}
+.line{
+    font-size: 10px;
+}
+
+.black{
+    background-color: black;
+    color black;
+}
