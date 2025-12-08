@@ -11,25 +11,23 @@
   <nav>
   <ul class="nav">
     <li class="nav-item">
-      <a href="/">Home</a>
+      <a href="{{ '/' | url }}">Home</a>
     </li>
     <li class="nav-item dropdown">
-      <a href="/projects/">Projects</a>
+      <a href="{{ '/projects/' | url }}">Projects</a>
       <ul class="dropdown-menu">
-        <li><a href="projects/NM231_Graphic_Novel/">Graphic Novel</a></li>
+        <li><a href="{{ '/projects/NM231_Graphic_Novel/' | url }}">Graphic Novel</a></li>
       </ul>
     </li>
     <li class="nav-item">
-      <a href="/about/">About</a>
+      <a href="{{ '/about/' | url }}">About</a>
     </li>
   </ul>
 </nav>
-  </nav>
 </header>
 
-
-  <main>
-    {{ content | safe }}
-  </main>
+<main>
+  {{ content | safe }}
+</main>
 </body>
 </html>
