@@ -156,6 +156,132 @@
 </script>
 
 
+  
+  
+  
+  
+  <div class="preview-box" 
+     style="width: 300px; height: 300px;"
+     onclick="window.location.href='NM231_Desktop'">
+  <iframe id="preview-iframe-desktop-sim" 
+          src="NM231_Desktop" 
+          title="Desktop Sim"></iframe>
+</div>
+
+<style>
+.preview-box {
+  overflow: hidden;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth hover */
+}
+
+.preview-box:hover {
+  transform: scale(1.05); /* slightly grow the container */
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3); /* stronger shadow */
+}
+
+.preview-box iframe {
+  border: none;
+  transform-origin: top left;
+  width: 1000px;  /* initial placeholder */
+  height: 1000px;
+  pointer-events: none;
+  transition: transform 0.3s ease; /* optional smooth scaling if content resizes */
+}
+</style>
+
+<script>
+(function() {
+  const iframe = document.getElementById('preview-iframe-desktop-sim');
+  const container = iframe.parentElement;
+
+  iframe.onload = () => {
+    try {
+      const contentWidth = iframe.contentWindow.document.body.scrollWidth;
+      const contentHeight = iframe.contentWindow.document.body.scrollHeight;
+
+      const scaleX = container.offsetWidth / contentWidth;
+      const scaleY = container.offsetHeight / contentHeight;
+      const scale = Math.min(scaleX, scaleY);
+
+      iframe.style.transform = `scale(${scale})`;
+      iframe.style.width = contentWidth + 'px';
+      iframe.style.height = contentHeight + 'px';
+    } catch(e) {
+      console.warn('Cannot access iframe content (cross-origin?)', e);
+    }
+  };
+})();
+</script>
+
+
+  
+  
+  
+  
+  <div class="preview-box" 
+     style="width: 300px; height: 300px;"
+     onclick="window.location.href='NM231_AlexeiReport'">
+  <iframe id="preview-iframe-alexei-report" 
+          src="NM231_AlexeiReport" 
+          title="Alexei Report"></iframe>
+</div>
+
+<style>
+.preview-box {
+  overflow: hidden;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth hover */
+}
+
+.preview-box:hover {
+  transform: scale(1.05); /* slightly grow the container */
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3); /* stronger shadow */
+}
+
+.preview-box iframe {
+  border: none;
+  transform-origin: top left;
+  width: 1000px;  /* initial placeholder */
+  height: 1000px;
+  pointer-events: none;
+  transition: transform 0.3s ease; /* optional smooth scaling if content resizes */
+}
+</style>
+
+<script>
+(function() {
+  const iframe = document.getElementById('preview-iframe-alexei-report');
+  const container = iframe.parentElement;
+
+  iframe.onload = () => {
+    try {
+      const contentWidth = iframe.contentWindow.document.body.scrollWidth;
+      const contentHeight = iframe.contentWindow.document.body.scrollHeight;
+
+      const scaleX = container.offsetWidth / contentWidth;
+      const scaleY = container.offsetHeight / contentHeight;
+      const scale = Math.min(scaleX, scaleY);
+
+      iframe.style.transform = `scale(${scale})`;
+      iframe.style.width = contentWidth + 'px';
+      iframe.style.height = contentHeight + 'px';
+    } catch(e) {
+      console.warn('Cannot access iframe content (cross-origin?)', e);
+    }
+  };
+})();
+</script>
+
+
 </div>
 
 </main>

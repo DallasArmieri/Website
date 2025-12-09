@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NM231 Desktop</title>
+  <link rel="stylesheet" href="/Website/css/style.css">
+</head>
+
+<body>
+ <header>
+  <nav>
+  <ul class="nav">
+    <li class="nav-item">
+      <a href="/Website/">Home</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a href="/Website/projects/">Projects</a>
+      <ul class="dropdown-menu">
+        <li><a href="/Website/projects/NM231_Graphic_Novel/">Graphic Novel</a></li>
+        <li><a href="/Website/projects/NM231_ChooseAdventure/">Choose Your Adventure</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</header>
+
+<main>
+  
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Javascript CSS and Sound</title>
+    <link href="CSS/index.CSS" rel="stylesheet"type="text/css">   
+</head>
+    
+<body> 
+    <div id="computer">
+        <div id="screendiv">
+            <div id="desktop" onclick="changeBackground()">
+                <div id="worddoc"> 
+                    <div id="wordfiller"></div>
+                  How to created timed event in html:<br><br>   Put the name of a function inside the command setTimeout(x,y);<br> where x is the name of the function you want to run and y is the time in milieseconds.<br> Example: setTimeout(playAudioStartSound,1000); <br>would play the function playAudioStartSound() after 1 second.
+                </div>
+                <div id="blackscreen"></div>
+                <div id="static"></div>
+                <div id="section1">
+                    <div id="subsec2b"> <div id="ship"><img src="UFO.png" /> </div></div>
+                    <div id="subsec1"></div>
+                    <div id="subsec3"></div>
+                </div>
+                <div id="section2">
+                    <div id="subsec1"></div>
+                    <div id="subsec2">
+                        <div id="iconfiller"></div>
+                        <div id="icon1" onclick="alienvisible()"></div>
+                        <div id="icon2" onclick="worddoc()"></div>
+                        <div id="icon3" onclick="static()"></div>
+                        <div id="iconfiller"></div>
+                    </div>
+                    <div id="subsec3"></div>
+                </div>
+                <div id="section3">
+                    <div id="subsec1"></div>
+                    <div id="subsec2"> </div>
+                    <div id="subsec3"></div>
+                </div>
+                <div id="section4" onclick=" errorSound()"></div>
+                <div id="controls"><button id="startbutton" onclick=" timeSound1()">Start!</button></div>
+                </div>
+            <div id="taskbar" onclick="errorSound()"></div>
+            </div>
+    </div> 
+     
+    
+    <script>
+        
+        
+        var startsound = new Audio('startsound.mp4');
+        var error = new Audio('errorsound.mp4');
+        var alienship = new Audio('ufosound.mp4');
+        var statics = new Audio('staticsound.mp4');
+        var discMoveBack = true;  
+        var disc = document.getElementById("ship");
+        var discPos = 0;
+        var clickCounter = 1;
+  
+        function timeSound1(){
+        setTimeout(playAudioStartSound,100);
+        }
+        function playAudioStartSound(){
+            startsound.play();
+          document.getElementById('blackscreen').style.visibility = "hidden";
+            document.getElementById('taskbar').style.visibility = "visible";
+        }
+        
+        function errorSound(){
+            error.play();
+        }
+        function toggleMovement() {
+            if (discMoveBack) {
+    	   discMoveBack = false;
+            }
+            else {
+                discMoveBack = true;
+            }
+        }
+        
+        function alienvisible(){
+            alienship.play();
+            document.getElementById('subsec2b').style.visibility = "visible";
+            document.getElementById('ship').style.visibility = "visible";
+            setTimeout(makeInvisible,10000);
+            loop();
+            discPos = 0;
+        }
+        
+        function makeInvisible(){
+            document.getElementById('subsec2b').style.visibility = "hidden";
+            document.getElementById('ship').style.visibility = "hidden";
+        }
+        
+        function static(){
+            statics.play();
+            document.getElementById('taskbar').style.visibility = "hidden";
+            document.getElementById('static').style.visibility = "visible";
+            setTimeout(fadeToBlack,2000);
+        }
+        function fadeToBlack(){
+            error.play();
+            document.getElementById('static').style.visibility = "hidden";
+            document.getElementById('blackscreen').style.visibility = "visible";
+        }
+        function worddoc(){
+          document.getElementById('worddoc').style.visibility = "visible";  
+            setTimeout(wordDocTimer,8000);
+        }
+        function wordDocTimer(){
+          document.getElementById('worddoc').style.visibility = "hidden";  
+        }
+        function changeBackground(){
+            if(clickCounter == 1){
+            document.getElementById('desktop').style.backgroundImage = 'url(backgroundimage.png)';
+            }
+            if(clickCounter == 2){
+            document.getElementById('desktop').style.backgroundImage = 'url(cherrylava.jpg)';
+            }
+            if(clickCounter == 3){
+             document.getElementById('desktop').style.backgroundImage = 'url(moonDeer.jpg)';   
+            }
+            if(clickCounter == 4){
+              document.getElementById('desktop').style.backgroundImage = 'url(colorTree.jpg)';    
+            }
+            if(clickCounter == 5){
+                document.getElementById('desktop').style.backgroundImage = 'url(steamCity.jpg)'; 
+            clickCounter = 0;    
+            }
+            clickCounter++;
+            console.log(clickCounter);
+        
+        }
+        
+        function toggleMovement() {
+    if (discMoveBack) {
+    	discMoveBack = false;
+    }
+    else {
+    	discMoveBack = true;
+    }
+}
+        
+        function loop() {
+    if (discMoveBack) {
+    	discPos++;
+    }
+    else {
+    	discPos--;
+    }
+
+    if(discPos > 770){
+    	discMoveBack = true;
+    	toggleMovement();
+    } 
+    if(discPos<0){
+    	discMoveBack = false;
+    	toggleMovement();
+    }
+
+    disc.style.left = discPos + 'px';
+    console.log(discPos);
+
+/*The setTimeout() method calls a function or evaluates an expression after a specified number of milliseconds.*/
+    setTimeout(loop, 1);
+}
+        
+    </script>
+
+</body>
+    
+</html>
+</main>
+</body>
+</html>
