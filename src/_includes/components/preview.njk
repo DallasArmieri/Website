@@ -1,0 +1,57 @@
+<div class="preview-box" 
+     style="width: {{ width | default('400px') }}; height: {{ height | default('400px') }};"
+     onclick="window.location.href='{{ url }}'">
+  <iframe id="preview-iframe-{{ titlePreview | slugify }}" 
+          src="{{ url }}" 
+          title="{{ titlePreview | default('Page Preview') }}"></iframe>
+</div>
+
+<style>
+.preview-box {
+  overflow: hidden;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth hover */
+}
+
+.preview-box:hover {
+  transform: scale(1.05); /* slightly grow the container */
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3); /* stronger shadow */
+}
+
+.preview-box iframe {
+  border: none;
+  transform-origin: top left;
+  width: 1000px;  /* initial placeholder */
+  height: 1000px;
+  pointer-events: none;
+  transition: transform 0.3s ease; /* optional smooth scaling if content resizes */
+}
+</style>
+
+<script>
+(function() {
+  const iframe = document.getElementById('preview-iframe-{{ titlePreview | slugify }}');
+  const container = iframe.parentElement;
+
+  iframe.onload = () => {
+    try {
+      const contentWidth = iframe.contentWindow.document.body.scrollWidth;
+      const contentHeight = iframe.contentWindow.document.body.scrollHeight;
+
+      const scaleX = container.offsetWidth / contentWidth;
+      const scaleY = container.offsetHeight / contentHeight;
+      const scale = Math.min(scaleX, scaleY);
+
+      iframe.style.transform = `scale(${scale})`;
+      iframe.style.width = contentWidth + 'px';
+      iframe.style.height = contentHeight + 'px';
+    } catch(e) {
+      console.warn('Cannot access iframe content (cross-origin?)', e);
+    }
+  };
+})();
+</script>

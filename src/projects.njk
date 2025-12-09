@@ -1,0 +1,22 @@
+---
+title: Home
+layout: layouts/base.njk
+---
+
+<h1 style="text-align: center; margin-bottom: 20px;">Projects</h1>
+
+<div style="display: flex; justify-content: center; gap: 20px; padding: 20px; flex-wrap: wrap;">
+
+  {% set url = "NM231_Graphic_Novel" %}
+  {% set width = "300px" %}
+  {% set height = "300px" %}
+  {% set titlePreview = "Graphic Novel Preview" %}
+  {% include "components/preview.njk" %}
+
+  {% set url = "NM231_ChooseAdventure" %}
+  {% set width = "300px" %}
+  {% set height = "300px" %}
+  {% set titlePreview = "Choose Adventure Preview" %}
+  {% include "components/preview.njk" %}
+
+</div>
