@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <link rel="stylesheet" href="/Website/css/style.css">
+</head>
+
+<body>
+ <header>
+  <nav>
+  <ul class="nav">
+    <li class="nav-item">
+      <a href="/Website/">Home</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a href="/Website/projects/">Projects</a>
+      <ul class="dropdown-menu">
+        <li><a href="/Website/projects/NM231_Graphic_Novel/">Graphic Novel</a></li>
+        <li><a href="/Website/projects/NM231_ChooseAdventure/">Choose Your Adventure</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</header>
+
+<main>
+  
+<h1 style="text-align: center; margin-bottom: 20px;">Projects</h1>
+
+<div style="display: flex; justify-content: center; gap: 20px; padding: 20px; flex-wrap: wrap;">
+
+  
+  
+  
+  
+  <div class="preview-box" 
+     style="width: 300px; height: 300px;"
+     onclick="window.location.href='NM231_Graphic_Novel'">
+  <iframe id="preview-iframe-graphic-novel-preview" 
+          src="NM231_Graphic_Novel" 
+          title="Graphic Novel Preview"></iframe>
+</div>
+
+<style>
+.preview-box {
+  overflow: hidden;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth hover */
+}
+
+.preview-box:hover {
+  transform: scale(1.05); /* slightly grow the container */
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3); /* stronger shadow */
+}
+
+.preview-box iframe {
+  border: none;
+  transform-origin: top left;
+  width: 1000px;  /* initial placeholder */
+  height: 1000px;
+  pointer-events: none;
+  transition: transform 0.3s ease; /* optional smooth scaling if content resizes */
+}
+</style>
+
+<script>
+(function() {
+  const iframe = document.getElementById('preview-iframe-graphic-novel-preview');
+  const container = iframe.parentElement;
+
+  iframe.onload = () => {
+    try {
+      const contentWidth = iframe.contentWindow.document.body.scrollWidth;
+      const contentHeight = iframe.contentWindow.document.body.scrollHeight;
+
+      const scaleX = container.offsetWidth / contentWidth;
+      const scaleY = container.offsetHeight / contentHeight;
+      const scale = Math.min(scaleX, scaleY);
+
+      iframe.style.transform = `scale(${scale})`;
+      iframe.style.width = contentWidth + 'px';
+      iframe.style.height = contentHeight + 'px';
+    } catch(e) {
+      console.warn('Cannot access iframe content (cross-origin?)', e);
+    }
+  };
+})();
+</script>
+
+
+  
+  
+  
+  
+  <div class="preview-box" 
+     style="width: 300px; height: 300px;"
+     onclick="window.location.href='NM231_ChooseAdventure'">
+  <iframe id="preview-iframe-choose-adventure-preview" 
+          src="NM231_ChooseAdventure" 
+          title="Choose Adventure Preview"></iframe>
+</div>
+
+<style>
+.preview-box {
+  overflow: hidden;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth hover */
+}
+
+.preview-box:hover {
+  transform: scale(1.05); /* slightly grow the container */
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3); /* stronger shadow */
+}
+
+.preview-box iframe {
+  border: none;
+  transform-origin: top left;
+  width: 1000px;  /* initial placeholder */
+  height: 1000px;
+  pointer-events: none;
+  transition: transform 0.3s ease; /* optional smooth scaling if content resizes */
+}
+</style>
+
+<script>
+(function() {
+  const iframe = document.getElementById('preview-iframe-choose-adventure-preview');
+  const container = iframe.parentElement;
+
+  iframe.onload = () => {
+    try {
+      const contentWidth = iframe.contentWindow.document.body.scrollWidth;
+      const contentHeight = iframe.contentWindow.document.body.scrollHeight;
+
+      const scaleX = container.offsetWidth / contentWidth;
+      const scaleY = container.offsetHeight / contentHeight;
+      const scale = Math.min(scaleX, scaleY);
+
+      iframe.style.transform = `scale(${scale})`;
+      iframe.style.width = contentWidth + 'px';
+      iframe.style.height = contentHeight + 'px';
+    } catch(e) {
+      console.warn('Cannot access iframe content (cross-origin?)', e);
+    }
+  };
+})();
+</script>
+
+
+</div>
+
+</main>
+</body>
+</html>

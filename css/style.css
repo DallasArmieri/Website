@@ -50,14 +50,28 @@ header {
   top: 100%;
   left: 0;
   list-style: none;
-  padding: 5px;
+  padding: 5px; /* padding around the whole menu */
   margin: 0;
   background: #000000;
   border: 1px solid #ccc;
+  width: max-content; /* fit content width */
+  white-space: nowrap; /* prevent wrapping */
+  border-radius: 4px; /* optional, makes it nicer */
+}
+
+.dropdown-menu li {
+  margin-bottom: 4px; /* space between items */
+}
+
+.dropdown-menu li:last-child {
+  margin-bottom: 0; /* remove margin after last item */
 }
 
 .dropdown-menu li a {
-  padding: 8px 12px;
+  display: block;
+  padding: 8px 12px; /* space inside each link */
+  color: #fff;
+  text-decoration: none;
 }
 
 .dropdown:hover .dropdown-menu {
